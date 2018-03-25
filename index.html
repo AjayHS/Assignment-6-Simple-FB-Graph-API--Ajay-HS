@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Facebook </title>
+</head>
+
+<body style="background: linear-gradient(blue,white)">
+	<!--Modal-->
+	<div id="myModal" class="modal fade in">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                <p class="modal-title">Find Your Facebook Details</p>
+	            </div>
+	            <div class="modal-body">
+					<p>Facebook Token</p>
+	                <form>
+	                    <div class="form-group">
+	                        <input id="txtFbToken" type="text" class="form-control" placeholder="Token Here">
+	                    </div>
+	                    <input id="btnShowFbDetail" type="submit" class="center-block btn btn-primary" value="Fetch Data" />
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="divFacebookAccDetails">
+		<div id="wrapper">
+			<nav id="menubar"  class="navbar navbar-inverse navbar-fixed-top">
+		  		<div class="container-fluid">
+		    		<div class="navbar-header">
+		      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
+		        			<span class="icon-bar"></span>
+			        		<span class="icon-bar"></span>
+			        		<span class="icon-bar"></span>                        
+		      			</button>
+
+						<div  class="navbar-brand">
+		                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify hidden-lg hidden-md hidden-sm hidden-xs"></a>
+		    				<a id="websiteName" href="#">Facebook</a>
+		                </div>
+		    		</div>
+		    		<div class="collapse navbar-collapse" id="myNavbar">
+				      	<ul id="subMenu" class="nav navbar-nav">
+				        	<li><a class="lnk1" href="#divProfileDetail">Profile</a></li>
+				        	<li><a class="lnk2" href="#divPost">Posts</a></li>
+						<li><a class="lnk2" href="https://developers.facebook.com/tools-and-support/">Get New Token</a></li>
+		      			</ul>
+		    		</div>
+		  		</div>
+			</nav>
+			<div id="sidebar-wrapper" class="hidden-lg hidden-md hidden-sm hidden-xs">
+		        <nav id="spy">
+		            <ul class="sidebar-nav nav">
+		                <li>
+		                    <a class="lnk1" href="#divProfileDetail">
+		                        <span class="fa fa-anchor solo">Profile</span>
+		                    </a>
+		                </li>
+		                <li>
+		                    <a class="lnk2" href="#divPost">
+		                        <span class="fa fa-anchor solo">Posts</span>
+		                    </a>
+		                </li>
+		            </ul>
+		        </nav>
+		    </div>
+	    </div>
+
+	    <div id="divHome">
+	  <img id="imgHome" class="img-responsive" src="fb.jpg"/>
+
+
+            
+	    </div>
+	   
+	    <div id="divProfileDetail">
+		   <div class="container">
+
+
+
+			<div class="row"  >
+
+				<div id="cover" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 coverHeight">
+  
+
+					<div class="row">
+
+						<div id="profilePhoto" class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2" style="margin:3em 0 1em 0;"></div>
+						
+							</div>
+
+     				
+					
+
+				</div>
+
+			</div>
+ <div class="container">
+				<div class="row">
+						<p><b><u>Profile Information:</b></u></p>
+					<div class="col-sm-12">
+						<p>*Your Name is <b>"<span id="myName"></span>"</b></p>
+					</div>
+
+					<div class="col-sm-12">
+						<p> &emsp; &emsp; First Name:<b>"<span id="myfirstName"></span>"</b></p>
+					</div>
+					
+					<div class="col-sm-12">
+						<p>&emsp; &emsp; Last Name: <b>"<span id="mylastName"></span>"</b></p>
+					</div>
+					
+					
+				<div class="col-sm-12">
+						<p>*your Email is <b>"<span id="myemail"></span>"</b></p>
+					</div>
+					
+					<div class="col-sm-12">
+						<p>*And Your Gender is Specified as <b> "<span id="myGender"></span> "</b></p>
+					</div>
+					<div class="col-sm-12">
+						<p>*Your Birthday is on <b>"<span id="myBirthday"></span>"</b></p>
+					</div>
+					<div class="col-sm-12">
+						<p>*Your Hometown is:<b> "<span id="myHometown"></span>"</b></p>
+					</div>
+					<div class="col-sm-12">
+						<p>*Your Relationship Status is :<b>" <span id="myRelStatus"></span> "</b></p>
+					</div>
+					<div class="col-sm-12">
+						<p>*You are Educated from :<b> <span id="myEducation"></span> </b></p>
+						<ol id="educationList"></ol>
+					</div>
+					<div class="col-sm-12">
+						<p>*Quote:<b>" <span id="myquotes"></span> "</b></p>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+</div>
+
+
+		</div>
+
+		<div id="divPost">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>Recent Posts : <span id="myPosts"></span></p>
+						<ol id="feedsList"></ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
